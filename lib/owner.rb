@@ -1,6 +1,6 @@
 require 'pry'
 class Owner
-  # attr_accessor  :owner #:cats
+
   attr_reader :name, :species
 
   @@all = []
@@ -9,8 +9,6 @@ class Owner
     @name = name
     @species = "human"
     @@all << self
-    @cats = []
-
   end
 
   def self.all
@@ -58,7 +56,7 @@ class Owner
   end
 
   def sell_pets
-     Cat.all.select do |cat|
+    Cat.all.select do |cat|
       cat.mood = "nervous"
       cat.owner = nil
     end
